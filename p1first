@@ -1,0 +1,29 @@
+
+#include<stdio.h>
+int getinput(int *a,int *b)
+{
+   printf("Enter two numbers");
+   scanf("%d%d",a,b);
+}
+   int add(int p,int q)
+{
+   int s;
+   s=p+q;
+   return s;
+}
+   int output(int addition)
+{
+   printf("Sum is %d",addition);
+}
+   int main()
+{
+   int a,b;
+   getinput(&a,&b);
+   int sum=add(a,b);
+   output(sum);
+}
+
+
+
+
+
