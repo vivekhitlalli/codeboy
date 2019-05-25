@@ -1,0 +1,54 @@
+
+#include<stdio.h>
+
+struct ft
+{
+        int a,b;
+};
+
+int input(struct ft *f1,struct ft *f2)
+{
+        printf("Enter first fraction\n");
+        scanf("%d/%d",&f1->a,&f1->b);
+        printf("Enter second fraction\n");
+        scanf("%d/%d",&f2->a,&f2->b);
+}
+
+void add(struct ft f1,struct ft f2,struct ft *f3)
+{
+        if(f1.b==f2.b)
+   {
+        f3->a=(f1.a+f2.a);
+        f3->b=f1.b;
+   }
+else
+   {
+        f3->a= ((f1.a*f2.b)+(f1.b*f2.a));
+        f3->b= (f1.b*f2.b);
+   }
+}
+void output(struct ft f1,struct ft f2,struct ft f3)
+{
+        if(f3.b==0)
+        printf("Sum of %d/%d + %d/%d = N.D \n",f1.a,f1.b,f2.a,f2.b);
+        else if (f3.a==f3.b)
+        {
+        printf("Sum of %d/%d + %d/%d = 1 \n",f1.a,f1.b,f2.a,f2.b);
+        }
+        else
+        {
+        printf("Sum of %d/%d + %d/%d = %d/%d \n",f1.a,f1.b,f2.a,f2.b,f3.a,f3.b);
+        }
+}
+int main()
+{
+struct ft f1,f2,f3;
+input(&f1,&f2);
+add(f1,f2,&f3);
+output(f1,f2,f3);
+}
+
+
+
+
+
